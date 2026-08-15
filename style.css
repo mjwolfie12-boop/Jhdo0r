@@ -96,11 +96,11 @@ body::after {
 ========================= */
 
 h1 {
-    margin: 150px 0 0;
+    margin: 200px 0 0;
 
     font-family: "Luckiest Guy", cursive;
 
-    font-size: clamp(60px, 11vw, 320px);
+    font-size: clamp(80px, 11vw, 320px);
 
     line-height: 1.05;
 
