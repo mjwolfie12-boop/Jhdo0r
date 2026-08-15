@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <p></p>
+        <h1>Happy Birthday! 🎂</h1>
+        <p>taraa website kecil kecilan keren kan?</p>
+        <p>umur berapa? 16th ya? selamat</p>
+
+        <div class="gift" onclick="bukaHadiah()">
+            🎁
+        </div>
+
+        <p id="hint">Klik kotaknya!</p>
+
+        <div id="gallery">
+
+            <img src="foto/foto 1.jpg" class="foto">
+            <img src="foto/foto 2.jpg" class="foto">
+            <img src="foto/foto 3.jpg" class="foto">
+            <img src="foto/foto 4.jpg" class="foto">
+            <img src="foto/foto 5.jpg" class="foto">
+            <img src="foto/foto 6.jpg" class="foto">
+            <img src="foto/foto 7.jpg" class="foto">
+            <img src="foto/foto 8.jpg" class="foto">
+            <img src="foto/xilonen.png" class="stiker-xilonen">
+            <img src="foto/caine.png" class="stiker-caine">
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function bukaHadiah() {
+
+            document.querySelector(".gift").innerHTML = "🎉";
+
+            document.getElementById("hint").innerHTML =
+                "wkwkwk aku ga punya banyak fotomu hehe :D";
+
+            const foto = document.querySelectorAll(".foto");
+
+            foto.forEach((gambar, index) => {
+
+                setTimeout(() => {
+                    gambar.classList.add("muncul");
+                }, index * 1500);
+
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>
