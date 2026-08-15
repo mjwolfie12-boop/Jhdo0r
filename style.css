@@ -14,9 +14,21 @@ body {
     color: #2A2B22;
 
     background:
-        radial-gradient(circle at 15% 20%, #E7C25E 0 8%, transparent 25%),
-        radial-gradient(circle at 85% 80%, #F2DEA9 0 8%, transparent 25%),
-        linear-gradient(135deg, #F5F3E5, #F5F3E5);
+        radial-gradient(
+            circle at 15% 20%,
+            #E7C25E 0 8%,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            #F2DEA9 0 8%,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #F5F3E5,
+            #F5F3E5
+        );
 
     overflow-x: hidden;
 }
@@ -29,6 +41,7 @@ body {
 body::before,
 body::after {
     content: "";
+
     position: fixed;
 
     width: 180px;
@@ -60,33 +73,35 @@ body::after {
 
 .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 720px;
 
     min-height: 100vh;
 
     margin: auto;
-    padding: 45px 20px;
+
+    padding: 55px 18px 80px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 
     text-align: center;
 
     position: relative;
 }
 
+
 /* =========================
    JUDUL
 ========================= */
 
 h1 {
-    margin: 0;
+    margin: 20px 0 0;
 
     font-family: "Luckiest Guy", cursive;
 
-    font-size: 46px;
+    font-size: clamp(42px, 11vw, 62px);
+
     line-height: 1.05;
 
     color: #d85c82;
@@ -100,6 +115,7 @@ h1 {
 
 h1::after {
     content: "✦";
+
     display: block;
 
     font-family: sans-serif;
@@ -119,7 +135,11 @@ h1::after {
 .container > p {
     margin: 15px 0 25px;
 
-    font-size: 16px;
+    max-width: 500px;
+
+    font-size: clamp(14px, 4vw, 17px);
+
+    line-height: 1.6;
 
     color: #806875;
 
@@ -132,8 +152,8 @@ h1::after {
 ========================= */
 
 .gift {
-    width: 190px;
-    height: 190px;
+    width: clamp(155px, 42vw, 190px);
+    height: clamp(155px, 42vw, 190px);
 
     margin: 15px 0 10px;
 
@@ -141,7 +161,7 @@ h1::after {
     align-items: center;
     justify-content: center;
 
-    font-size: 100px;
+    font-size: clamp(80px, 22vw, 100px);
 
     background: rgba(255, 255, 255, 0.65);
 
@@ -166,13 +186,14 @@ h1::after {
 
 
 /* =========================
-   TOMBOL / PETUNJUK
+   PETUNJUK
 ========================= */
 
 #hint {
     display: inline-block;
 
     margin-top: 18px;
+
     padding: 11px 22px;
 
     background: #d85c82;
@@ -199,7 +220,7 @@ h1::after {
 
     position: absolute;
 
-    top: 85px;
+    top: 70px;
     left: 10px;
 
     font-size: 22px;
@@ -216,7 +237,7 @@ h1::after {
 
     position: absolute;
 
-    bottom: 85px;
+    bottom: 70px;
     right: 5px;
 
     font-size: 20px;
@@ -235,11 +256,13 @@ h1::after {
 
 #gallery {
     width: 100%;
+    max-width: 560px;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
 
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
 
     margin-top: 30px;
 }
@@ -247,16 +270,11 @@ h1::after {
 .foto {
     width: 100%;
     aspect-ratio: 1 / 1;
+
     object-fit: cover;
 
     border-radius: 20px;
-}
 
-.foto {
-    width: 90%;
-    max-width: 350px;
-    border-radius: 20px;
-  
     opacity: 0;
 
     transform:
@@ -266,7 +284,9 @@ h1::after {
     box-shadow:
         0 15px 35px rgba(120, 80, 100, 0.18);
 
-    transition: 0.8s ease;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
 .foto.muncul {
@@ -279,11 +299,50 @@ h1::after {
 
 
 /* =========================
+   STIKER CAINE
+========================= */
+
+.stiker-caine {
+    position: fixed;
+
+    left: 2vw;
+    top: 2vh;
+
+    width: clamp(65px, 18vw, 130px);
+
+    z-index: 10;
+
+    transform: rotate(-8deg);
+
+    animation: goyang-caine 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   STIKER XILONEN
+========================= */
+
+.stiker-xilonen {
+    position: fixed;
+
+    right: 2vw;
+    bottom: 2vh;
+
+    width: clamp(70px, 20vw, 140px);
+
+    z-index: 10;
+
+    transform: rotate(8deg);
+
+    animation: goyang-xilonen 3s ease-in-out infinite;
+}
+
+
+/* =========================
    ANIMASI
 ========================= */
 
 @keyframes muncul {
-
     from {
         opacity: 0;
         transform: translateY(25px);
@@ -293,12 +352,10 @@ h1::after {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
 
 @keyframes melayang {
-
     0%, 100% {
         transform: translateY(0);
     }
@@ -306,12 +363,10 @@ h1::after {
     50% {
         transform: translateY(-10px);
     }
-
 }
 
 
 @keyframes dekorasi {
-
     0%, 100% {
         transform: translateY(0);
         opacity: 0.7;
@@ -321,48 +376,48 @@ h1::after {
         transform: translateY(-8px);
         opacity: 1;
     }
-
 }
 
-.stiker-xilonen {
-    position: fixed;
-    right: 3vw;
-    bottom: 2vh;
-    width: 85vw;
-    max-width: 360px;
 
-    transform: rotate(8deg);
+@keyframes goyang-caine {
+    0%, 100% {
+        transform: rotate(-8deg) translateY(0);
+    }
 
-    animation: goyang 3s ease-in-out infinite;
+    50% {
+        transform: rotate(-3deg) translateY(-7px);
+    }
 }
 
-@keyframes goyang {
+
+@keyframes goyang-xilonen {
     0%, 100% {
         transform: rotate(8deg) translateY(0);
     }
 
     50% {
-        transform: rotate(3deg) translateY(-8px);
+        transform: rotate(3deg) translateY(-7px);
     }
 }
-.stiker-caine {
-    position: fixed;
-    left: 3vw;
-    top: 2vh;
-    width: 75vw;
-    max-width: 360px;
 
-    transform: rotate(8deg);
 
-    animation: goyang 3s ease-in-out infinite;
-}
+/* =========================
+   HP KECIL
+========================= */
 
-@keyframes goyang {
-    0%, 100% {
-        transform: rotate(8deg) translateY(0);
+@media (max-width: 420px) {
+
+    .container {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
-    50% {
-        transform: rotate(3deg) translateY(-8px);
+    #gallery {
+        gap: 10px;
     }
+
+    .foto {
+        border-radius: 17px;
+    }
+
 }
