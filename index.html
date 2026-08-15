@@ -58,6 +58,31 @@
 
     </script>
     <p>selamat ulang tahun Joaquin Valent Eandri Putra</p>
+    <!-- Bagian Audio -->
+<audio id="background-music" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutar audio.
+</audio>
+
+<!-- Tombol Musik (Opsional tapi disarankan agar tidak diblokir HP) -->
+<button id="music-btn" onclick="toggleMusic()" style="position: fixed; bottom: 20px; left: 20px; z-index: 999; padding: 10px 15px; border-radius: 20px; background: #d85c82; color: white; border: none; cursor: pointer;">
+    🎵 Putar Musik
+</button>
+
+<script>
+function toggleMusic() {
+    var music = document.getElementById("background-music");
+    var btn = document.getElementById("music-btn");
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "⏸️ Matikan Musik";
+    } else {
+        music.pause();
+        btn.innerHTML = "🎵 Putar Musik";
+    }
+}
+</script>
+    
 </body>
 
 </html>
