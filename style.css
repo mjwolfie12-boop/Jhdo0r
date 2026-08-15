@@ -77,9 +77,9 @@ body::after {
 
     min-height: 100vh;
 
-    margin: 140px;
+    margin: 80px;
 
-    padding: 380px 18px 80px;
+    padding: 280px 18px 80px;
 
     display: flex;
     flex-direction: column;
