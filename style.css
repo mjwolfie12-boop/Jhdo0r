@@ -72,14 +72,14 @@ body::after {
 ========================= */
 
 .container {
-    width: 100%;
+    width: 340%;
     max-width: 720px;
 
     min-height: 100vh;
 
     margin: auto;
 
-    padding: 55px 18px 80px;
+    padding: 130px 18px 80px;
 
     display: flex;
     flex-direction: column;
