@@ -308,7 +308,7 @@ h1::after {
     left: 2vw;
     top: 2vh;
 
-    width: clamp(65px, 18vw, 130px);
+    width: clamp(330px, 18vw, 130px);
 
     z-index: 10;
 
@@ -328,7 +328,7 @@ h1::after {
     right: 2vw;
     bottom: 2vh;
 
-    width: clamp(70px, 20vw, 140px);
+    width: clamp(340px, 20vw, 140px);
 
     z-index: 10;
 
