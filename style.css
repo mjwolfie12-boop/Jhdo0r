@@ -59,13 +59,12 @@ body::after {
 ========================= */
 
 .container {
-    width: 90%;
-    max-width: 430px;
+    width: 100%;
+    max-width: 600px;
 
     min-height: 100vh;
 
     margin: auto;
-
     padding: 45px 20px;
 
     display: flex;
@@ -77,7 +76,6 @@ body::after {
 
     position: relative;
 }
-
 
 /* =========================
    JUDUL
@@ -201,7 +199,7 @@ h1::after {
 
     position: absolute;
 
-    top: 25px;
+    top: 85px;
     left: 10px;
 
     font-size: 22px;
@@ -218,7 +216,7 @@ h1::after {
 
     position: absolute;
 
-    bottom: 25px;
+    bottom: 85px;
     right: 5px;
 
     font-size: 20px;
@@ -236,13 +234,27 @@ h1::after {
 ========================= */
 
 #gallery {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 30px;
 }
 
 .foto {
-    width: calc(50% - 8px);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+.foto {
+    width: 90%;
+    max-width: 350px;
     border-radius: 20px;
   
     opacity: 0;
@@ -316,8 +328,8 @@ h1::after {
     position: fixed;
     right: 3vw;
     bottom: 2vh;
-    width: 55vw;
-    max-width: 140px;
+    width: 85vw;
+    max-width: 360px;
 
     transform: rotate(8deg);
 
@@ -337,8 +349,8 @@ h1::after {
     position: fixed;
     left: 3vw;
     top: 2vh;
-    width: 45vw;
-    max-width: 140px;
+    width: 75vw;
+    max-width: 360px;
 
     transform: rotate(8deg);
 
